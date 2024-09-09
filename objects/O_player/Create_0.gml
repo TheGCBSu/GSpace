@@ -13,7 +13,9 @@ collision_enabled = true;
 shield_cooldown=true;
 sprite_index=spr_ship_Shield_ready;
 depth=2;
-	alarm[1]=300;
+	alarm[1]=60;
 	collision_enabled=false;
 	shield_cooldown=true;
 	instance_create_layer(x,y,"Instances",O_shield);
+	
+	slowed=false;

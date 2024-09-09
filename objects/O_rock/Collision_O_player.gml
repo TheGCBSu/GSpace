@@ -32,7 +32,7 @@ else if instance_number(O_rock) < O_game.max_rocks
 {
 	effect_create_above(ef_explosion, x, y, 1, c_white);
 	var max_width = room_width+distance;
-	var max_height = room_height;
+	var max_height = 0;
 	var loc_x=random_range(room_width/2,max_width);
 	var loc_y= random_range(room_height/2,max_height);
 	//effect_create_above(ef_explosion, loc_x, room_height-10, 2, c_gray);
@@ -44,3 +44,4 @@ else
 		effect_create_above(ef_explosion, x, y, 1, c_white);
         instance_destroy();
 }
+

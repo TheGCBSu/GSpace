@@ -45,6 +45,7 @@
     {"id":{"name":"Explosion","path":"sounds/Explosion/Explosion.yy",},},
     {"id":{"name":"GOver","path":"sounds/GOver/GOver.yy",},},
     {"id":{"name":"Pewpew","path":"sounds/Pewpew/Pewpew.yy",},},
+    {"id":{"name":"Player_hit","path":"sounds/Player_hit/Player_hit.yy",},},
     {"id":{"name":"RockBigv2","path":"sprites/RockBigv2/RockBigv2.yy",},},
     {"id":{"name":"RockSmallv2","path":"sprites/RockSmallv2/RockSmallv2.yy",},},
     {"id":{"name":"Shield","path":"sprites/Shield/Shield.yy",},},

@@ -11,15 +11,15 @@ audio_sound_pitch(Explosion, random_pitch);
 // Play the sound with the adjusted pitch
 audio_play_sound(Explosion, 10, false);
 if(sprite_index==RockSmallv2 && image_blend==c_red){
-O_game.rock_destroyed+=3;
+O_game.rock_destroyed+=4;
 }
 O_game.rock_destroyed+=1;
 if (O_game.rock_destroyed % 12 == 0) {
     // Increase the number of rocks every 3 rocks destroyed
     O_game.max_rocks += 1;
 }
-var rock_speed_increase = floor(O_game.rock_destroyed / 6) * 0.5; // Adjust speed increment as needed
-speed += rock_speed_increase;
+var rock_speed_increase = floor(O_game.rock_destroyed / 3) * 0.5; // Adjust speed increment as needed
+speed = 1 + rock_speed_increase;
 var distance = 50- floor(O_game.rock_destroyed/12);
 if sprite_index == RockBigv2
 {
@@ -33,12 +33,19 @@ if sprite_index == RockBigv2
 		var rock1 = instance_create_layer(x + offset_x1, y + offset_y1, "Instances", O_rock);
 		var rock2 = instance_create_layer(x + offset_x2, y + offset_y2, "Instances", O_rock);
 		var randomizer = irandom_range(1,100);
-		if(randomizer>80){
+		if(randomizer>90){
 			var offset_x3 = 100
 			var offset_y3 = 100
 			var rock3=instance_create_layer(x+offset_x3,y+offset_y3, "Instances", O_rock);
 			rock3.sprite_index=RockSmallv2;
 			rock3.image_blend=c_red;
+			rock3.speed=max(speed*1.5,2);
+		}else if(randomizer>40){
+			var offset_x3 = 100
+			var offset_y3 = 100
+			var rock3=instance_create_layer(x+offset_x3,y+offset_y3, "Instances", O_rock);
+			rock3.sprite_index=RockSmallv2;
+			rock3.image_blend=c_green;
 			rock3.speed=speed*1.5;
 		}
 		// Set their sprites to the small rock sprite
@@ -50,7 +57,7 @@ else if instance_number(O_rock) < O_game.max_rocks
 {
 	effect_create_above(ef_explosion, x, y, 1, c_white);
 	var max_width = room_width+distance;
-	var max_height = room_height;
+	var max_height = 0;
 	var loc_x=random_range(room_width/2,max_width);
 	var loc_y= random_range(room_height/2,max_height);
 	//effect_create_above(ef_explosion, loc_x, room_height-10, 2, c_gray);

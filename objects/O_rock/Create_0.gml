@@ -1,5 +1,5 @@
 speed = 1;
-direction = random_range(240,300);
+direction = random_range(260,290);
 image_angle = random(360);
 spin = random_range(-1, 1);
 var randomizer = irandom_range(1,5);
@@ -12,4 +12,4 @@ case 4: color=c_dkgray; break;
 case 5: color=c_gray; break;
 }
 image_blend=color;
-depth=2;
+depth=5;

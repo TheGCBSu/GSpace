@@ -22,6 +22,7 @@
     {"name":"bgm","order":3,"path":"sounds/bgm/bgm.yy",},
     {"name":"GOver","order":2,"path":"sounds/GOver/GOver.yy",},
     {"name":"Pewpew","order":1,"path":"sounds/Pewpew/Pewpew.yy",},
+    {"name":"Player_hit","order":4,"path":"sounds/Player_hit/Player_hit.yy",},
     {"name":"RockBigv2","order":7,"path":"sprites/RockBigv2/RockBigv2.yy",},
     {"name":"RockSmallv2","order":8,"path":"sprites/RockSmallv2/RockSmallv2.yy",},
     {"name":"Shield","order":9,"path":"sprites/Shield/Shield.yy",},

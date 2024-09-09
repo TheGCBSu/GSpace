@@ -1,0 +1,2 @@
+//debuff
+slowed=false;
