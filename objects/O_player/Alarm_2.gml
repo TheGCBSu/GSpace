@@ -1,0 +1,2 @@
+shield_cooldown=false;
+sprite_index=spr_ship_Shield_ready;

@@ -87,6 +87,20 @@ if fire_timer<=0{
 	audio_play_sound(Pewpew, 10, false);
     }
 
+if mouse_check_button(mb_right) && shield_cooldown==false{
+	if(O_game.rock_destroyed<200){
+	alarm[1]=300;
+	collision_enabled=false;
+	shield_cooldown=true;
+	instance_create_layer(x,y,"Instances",O_shield);
+	}else{
+	alarm[1]=450;
+	collision_enabled=false;
+	shield_cooldown=true;
+	instance_create_layer(x,y,"Instances",O_shield);
+	}
+
+}
 
 // Flicker effect
 if (flicker) {

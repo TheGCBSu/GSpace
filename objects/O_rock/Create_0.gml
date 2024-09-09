@@ -12,3 +12,4 @@ case 4: color=c_dkgray; break;
 case 5: color=c_gray; break;
 }
 image_blend=color;
+depth=2;
