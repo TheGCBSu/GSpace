@@ -1,13 +1,7 @@
 speed = 1;
-direction = random(360);
+direction = random_range(240,300);
 image_angle = random(360);
-if random(1) < 0.5 {
-    // Spin clockwise
-    spin_direction = 1;
-} else {
-    // Spin counterclockwise
-    spin_direction = -1;
-}
+spin = random_range(-1, 1);
 var randomizer = irandom_range(1,5);
 var color;
 switch(randomizer){

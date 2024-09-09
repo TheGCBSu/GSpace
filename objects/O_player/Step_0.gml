@@ -31,39 +31,63 @@ if keyboard_check_pressed(vk_escape)
 
 
 // Use "A" and "D" keys to rotate the player
-if keyboard_check(ord("D"))
-{
-    image_angle -= 4; // Rotate counterclockwise
-}
-if keyboard_check(ord("A"))
-{
-    image_angle += 4; // Rotate clockwise
-}
+//if keyboard_check(ord("D"))
+//{
+//    image_angle -= 4; // Rotate counterclockwise
+//}
+//if keyboard_check(ord("A"))
+//{
+//    image_angle += 4; // Rotate clockwise
+//}
 
 // Decrease the fire timer
 fire_timer -= delta_time / 1000; // Convert milliseconds to seconds
 
 // Check if the left mouse button is pressed and the timer allows firing
-if mouse_check_button(mb_left) {
-    if fire_timer <= 0 {
-        // Fire a bullet
-        instance_create_layer(x, y, "Instances", O_bullet);
+//if mouse_check_button(mb_left) {
+//    if fire_timer <= 0 {
+//        // Fire a bullet
+//        instance_create_layer(x, y, "Instances", O_bullet);
 
-        // Reset the fire timer
-        fire_timer = fire_delay;
-		var min_pitch = 1.0; // Minimum pitch
-		var max_pitch = 1.2; // Maximum pitch
+//        // Reset the fire timer
+//        fire_timer = fire_delay;
+//		var min_pitch = 1.0; // Minimum pitch
+//		var max_pitch = 1.2; // Maximum pitch
 
-		// Generate a random pitch within the specified range
-		var random_pitch = random_range(min_pitch, max_pitch);
+//		// Generate a random pitch within the specified range
+//		var random_pitch = random_range(min_pitch, max_pitch);
 
-		// Set the pitch for the sound
-		audio_sound_pitch(Pewpew, random_pitch);
+//		// Set the pitch for the sound
+//		audio_sound_pitch(Pewpew, random_pitch);
 
-		// Play the sound with the adjusted pitch
-		audio_play_sound(Pewpew, 10, false);
+//		// Play the sound with the adjusted pitch
+//		audio_play_sound(Pewpew, 10, false);
+//    }
+//}
+//fire automatically
+if fire_timer<=0{
+	if(O_game.rock_destroyed<100){
+	instance_create_layer(x,y, "Instances",O_bullet);
+	}else{
+		instance_create_layer(x-15,y, "Instances",O_bullet);
+		instance_create_layer(x+15,y, "Instances",O_bullet);
+	}
+		
+	fire_timer = fire_delay;
+	var min_pitch = 1.0; // Minimum pitch
+	var max_pitch = 1.2; // Maximum pitch
+
+	// Generate a random pitch within the specified range
+	var random_pitch = random_range(min_pitch, max_pitch);
+
+	// Set the pitch for the sound
+	audio_sound_pitch(Pewpew, random_pitch);
+
+	// Play the sound with the adjusted pitch
+	audio_play_sound(Pewpew, 10, false);
     }
-}
+
+
 // Flicker effect
 if (flicker) {
     flicker_timer += 1;

@@ -1,2 +1,2 @@
-move_wrap(true,true,0)
-image_angle += spin_direction * 1;
+move_wrap(true,true,10)
+image_angle += spin;
