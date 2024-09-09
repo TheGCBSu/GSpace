@@ -1,0 +1,12 @@
+window_set_cursor(cr_none);
+border_left = 0;
+border_right = room_width;
+border_top = 0;
+border_bottom = room_height;
+fire_timer = 0;
+fire_delay = 300;
+player_hp=5;
+flicker = false;
+flicker_timer = 0;
+flicker_interval = 10;
+collision_enabled = true;
